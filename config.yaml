@@ -46,7 +46,7 @@ error-logs-max-files: 10
 usage-statistics-enabled: true
 # Proxy URL. Supports socks5/http/https protocols. Example: socks5://user:pass@192.168.1.1:1080/
 # Per-entry proxy-url also supports "direct" or "none" to bypass both the global proxy-url and environment proxies explicitly.
-proxy-url: "http://10.168.0.168:10809"
+proxy-url: ""
 # When true, unprefixed model requests only use credentials without a prefix (except when prefix == model name).
 force-model-prefix: false
 # When true, forward filtered upstream response headers to downstream clients.
