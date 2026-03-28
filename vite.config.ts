@@ -5,6 +5,8 @@ import path from 'path';
 import { execSync } from 'child_process';
 import fs from 'fs';
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 // Get version from environment, git tag, or package.json
 function getVersion(): string {
   // 1. Environment variable (set by GitHub Actions)
@@ -37,12 +39,9 @@ function getVersion(): string {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    viteSingleFile({
-      removeViteModuleLoader: true
-    })
-  ],
+  plugins: [react(), viteSingleFile({
+    removeViteModuleLoader: true
+  }), cloudflare()],
   define: {
     __APP_VERSION__: JSON.stringify(getVersion())
   },
